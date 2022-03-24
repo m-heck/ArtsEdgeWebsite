@@ -21,19 +21,6 @@ if(navClose) {
     })
 }
 
-/* ============= HIDE MENU ON LINK-CLICK ============= */
-const links = document.querySelectorAll('.menu-icon');
-
-links.forEach(n => console.log(n));
-
-function hideMenu() {
-    const navMenu = document.getElementById('navigation');
-    navMenu.classList.remove('show-menu');
-    navOpen.classList.remove('hide-toggle');
-}
-
-links.forEach(n => n.addEventListener('click', hideMenu));
-
 /* ============= TRANSITIONS ============= */
 /* Fade in */
 
@@ -63,3 +50,15 @@ const sliders = document.querySelectorAll('.slide-in');
 sliders.forEach(slider => {
   appearOnScroll.observe(slider);
 })
+
+/* ============= PARALLAX ============= */
+if (true) {
+    console.log('large screen');
+    let title_text = document.getElementById('title-text');
+
+    window.addEventListener('scroll', function() {
+      var value = window.scrollY;
+
+      title_text.style.left = value * .25 + 'px';
+    })
+  }

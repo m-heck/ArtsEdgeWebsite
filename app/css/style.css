@@ -1,11 +1,18 @@
+#delete-me {
+    width: 50%;
+    line-height: 5rem;
+}
+
 /* =============== VARIABLES =============== */
 :root {
     /* colors */
     --primary-color: hsl(200, 19%, 59%);
     --background-color: black;
+    --background-color-lighter: hsl(200, 0%, 0%, 0.6);
 
     --text-color: hsl(200, 7%, 88%, 0.8);
     --text-color-alt: hsl(200, 55%, 88%, 0.3);
+    --text-color-darker: rgba(140, 147, 151, 0.8);
 
     /* font sizes */
     --gigantic-font-size: 3rem;
@@ -15,26 +22,22 @@
     --h1-weight: 200;
 
     /* misc */
-    --general-padding: 3rem;
+    --general-padding: 5rem;
 
+}
+
+/* for small browsers */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    :root {
+        --gigantic-font-size: 4.5rem;
+    }
 }
 
 /* for non-mobile */
 @media screen and (min-width: 769px) {
     :root {
         /* font sizes */
-        --gigantic-font-size: 6rem;
-        --normal-font-size: 1.2rem;
-
-        /* misc */
-        --general-padding: 6rem;
-    }
-}
-
-@media screen and (min-width: 769px) {
-    :root {
-        /* font sizes */
-        --gigantic-font-size: 6rem;
+        --gigantic-font-size: 8rem;
         --normal-font-size: 1.2rem;
 
         /* misc */
@@ -91,9 +94,10 @@ h1 {
     width: 100%;
     color: var(--text-color);
     position: fixed;
-    padding: .3rem;
+    padding: 1rem;
     transition: 0.3s;
     padding: 0.75rem;
+    z-index: 1;
 
     display: flex;
     justify-content: space-between;
@@ -108,11 +112,7 @@ h1 {
     justify-content: space-between;
 }
 
-.hamburger-menu:hover {
-    color: var(--text-color-alt);
-}
-
-.menu-icon:hover,  #open-menu:hover{
+.menu-icon:hover,  #open-menu:hover, #menu-logo:hover, .hamburger-menu:hover{
     color: var(--text-color-alt);
 }
 
@@ -125,24 +125,28 @@ h1 {
 }
 
 @media screen and (max-width: 480px) {
-    .hamburger-menu {
-        display: 100%;
+    #close-menu {
+        display: unset;
     }
 
-    #close-menu {
-        display: 100%;
+    .hamburger-menu {
+        display: unset;
     }
 
     .navigation-container {
-        flex-direction: column;
+        display: none;
+
         position: fixed;
-        bottom: -100%;
-        left: 0;
+        top: -100%;
+        right: 0;
         width: 100%;
-        background-color: var(--background-color);
         padding: 1.5rem 1rem 1rem;
-        box-shadow: 0 -1px 4px rgba(0, 0, 0, .15);
-        border-radius: 1.0rem 1.0rem 0 0;
+        text-align: center;
+        background-color: var(--background-color-lighter);
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 }
 
@@ -151,43 +155,53 @@ h1 {
 #close-menu, #open-menu {
     position: absolute;
     right: 1.3rem;
-    bottom: .5rem;
+    top: 1rem;
     cursor: pointer;
 }
 
 .show-menu {
-    bottom: 0;
+    top: 0;
 }
 
 .hide-toggle {
     display: none;
 }
 
+.show-toggle {
+    display: unset;
+}
+
 /* =============== TITLE =============== */
 #title-container {
-    width: 100vw;
-    overflow-x: hidden;
+    width: 100%;
+    max-height: 55rem;
+    height: 98vw;
     padding-left: var(--general-padding);
     padding-right: var(--general-padding);
 
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-content: center;
 }
 
 #title-text {
+    position: relative;
+    white-space: nowrap;
     font-size: var(--gigantic-font-size);
     align-self: center;
-    color: var(--text-color-alt);
+    color: var(--text-color-darker);
+    z-index: 2;
 }
 
 #title-image {
+    position: absolute;
     max-height: 55rem;
     height: 98vw;
     width: auto;
     max-width: 50vw;
     object-fit: cover;
+    right: 0;
+    margin-right: 2rem;
 }
 
 /* ========== TRANSITIONS ========== */
@@ -221,4 +235,8 @@ h1 {
 
 .fade-slowly {
     transition: opacity 2s ease-in;
+}
+
+.fade-very-slowly {
+    transition: opacity 4s ease-in;
 }
