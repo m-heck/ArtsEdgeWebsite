@@ -203,6 +203,10 @@ p {
     display: none;
 }
 
+.uil {
+    font-size: 1.5rem;
+}
+
 @media screen and (max-width: 480px) {
     #close-menu {
         display: unset;
