@@ -7,24 +7,32 @@
 
     --text-color: hsl(200, 7%, 88%, 0.8);
     --text-color-alt: hsl(200, 55%, 88%, 0.3);
-    --text-color-darker: rgba(140, 147, 151, 0.8);
 
     /* font sizes */
-    --gigantic-font-size: 3rem;
     --normal-font-size: .7rem;
+    --h1-font-size: 3rem;
+    --h2-font-size: 2rem;
+    --h3-font-size: 1rem;
+    --body-font-size: 1rem;
 
     /* font weights */
     --h1-weight: 200;
+    --h2-weight: 200;
+    --h3-weight: 600;
 
     /* misc */
     --general-padding: 5rem;
+    --general-gap: 2rem;
+    --title-margin: 1rem;
 
 }
 
 /* for small browsers */
 @media screen and (min-width: 480px) and (max-width: 768px) {
     :root {
-        --gigantic-font-size: 4.5rem;
+        --h1-font-size: 4.5rem;
+        --h2-font-size: 3rem;
+        --body-font-size: .8rem;
     }
 }
 
@@ -32,11 +40,15 @@
 @media screen and (min-width: 769px) {
     :root {
         /* font sizes */
-        --gigantic-font-size: 8rem;
+        --h1-font-size: 8rem;
+        --h2-font-size: 4rem;
+        --h3-font-size: 1.5rem;
         --normal-font-size: 1rem;
 
         /* misc */
         --general-padding: 6rem;
+        --general-gap: 4rem;
+        --title-margin: 2rem;
     }
 }
 
@@ -47,11 +59,16 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    outline: none;
+}
+
+html {
+    overflow-x: hidden;
 }
 
 a {
     text-decoration: none;
-    color: var(--text-color-darker);
+    color: var(--text-color);
 }
 
 ul {
@@ -66,6 +83,8 @@ img {
 
 body {
     width: 100%;
+    overflow-x: hidden;
+    margin-bottom: 100vh;
 
     display: block;
     font-size: var(--normal-font-size);
@@ -80,8 +99,48 @@ body {
 }
 
 h1 {
-    font-size: var(--gigantic-font-size);
+    font-size: var(--h1-font-size);
     font-weight: var(--h1-weight);
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+    font-weight: var(--h2-weight);
+    text-align: center;
+    margin: var(--title-margin);
+}
+
+h3 {
+    font-size: var(--h3-font-size);
+    font-weight: var(--h3-weight);
+    text-align: center;
+}
+
+p {
+    font-size: var(--body-font-size);
+}
+
+.body-container {
+    width: 80%;
+    max-width: 100vh;
+    height: auto;
+    text-align: justify;
+
+    margin-top: 120rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    line-height: 2rem;
+}
+
+.body-self-links {
+    cursor: pointer;
+    padding-top: 4rem;
+}
+
+.body-self-links:hover {
+    color: var(--text-color-alt);
 }
 
 /* =============== HEADER =============== */
@@ -182,9 +241,9 @@ h1 {
 #title-text {
     position: relative;
     white-space: nowrap;
-    font-size: var(--gigantic-font-size);
+    font-size: var(--h1-font-size);
     align-self: center;
-    color: var(--text-color-darker);
+    color: var(--text-color);
     z-index: 2;
     margin-left: -2rem;
 }
@@ -199,6 +258,31 @@ h1 {
     right: 0;
     margin-right: 2rem;
 }
+
+/* ========== ABOUT ========== */
+#about-container {
+    text-align: center;
+    gap: var(--general-gap);
+}
+
+/* ========== TUITION ========== */
+#tuition-container {
+    text-align: center;
+    gap: var(--general-gap);
+}
+
+#fees {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+/* ========== CLASSES ========== */
+#classes-container {
+    text-align: center;
+    gap: var(--general-gap);
+}
+
 
 /* ========== TRANSITIONS ========== */
 
