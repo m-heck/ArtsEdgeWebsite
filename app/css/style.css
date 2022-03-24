@@ -5,18 +5,20 @@
     --background-color: black;
 
     --text-color: hsl(200, 7%, 88%);
-    --text-color-alt: hsl(200, 29%, 37%)
+    --text-color-alt: hsl(200, 55%, 88%, 0.3);
 
     /* font sizes */
     --gigantic-font-size: 3rem;
 
     /* font weights */
+    --h1-weight: 200;
 
 }
 
 /* for non-mobile */
 @media screen and (min-width: 769px) {
     :root {
+        /* font sizes */
         --gigantic-font-size: 6rem;
     }
 }
@@ -62,37 +64,61 @@ body {
 
 h1 {
     font-size: var(--gigantic-font-size);
-    font-weight: 200;
+    font-weight: var(--h1-weight);
 }
 
 /* =============== TITLE =============== */
 #title-container {
-    border: blue solid;
     width: 100%;
     padding-left: 3rem;
     padding-right: 3rem;
 
     display: flex;
-    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
 
 }
 
-#title-container h1 {
-    border: red solid;
-}
-
-#title-container img {
-    border: orange solid;
-}
-
 #title-text {
     font-size: var(--gigantic-font-size);
     align-self: center;
+    color: var(--text-color-alt);
 }
 
 #title-image {
     max-height: 50rem;
     width: auto;
+}
+
+/* ========== TRANSITIONS ========== */
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+}
+
+.fade-in.appear {
+    opacity: 1;
+}
+
+.from-left {
+    transform: translateX(-50%);
+}
+
+.from-right {
+    transform: translateX(50%);
+}
+
+.from-left, .from-right {
+    transition: opacity 250ms ease-in, transform 800ms ease-in;
+    opacity: 0;
+}
+
+.from-left.appear, .from-right.appear {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.fade-slowly {
+    transition: opacity 2s ease-in;
 }
