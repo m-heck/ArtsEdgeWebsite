@@ -1,0 +1,98 @@
+/* =============== VARIABLES =============== */
+:root {
+    /* colors */
+    --primary-color: hsl(200, 19%, 59%);
+    --background-color: black;
+
+    --text-color: hsl(200, 7%, 88%);
+    --text-color-alt: hsl(200, 29%, 37%)
+
+    /* font sizes */
+    --gigantic-font-size: 3rem;
+
+    /* font weights */
+
+}
+
+/* for non-mobile */
+@media screen and (min-width: 769px) {
+    :root {
+        --gigantic-font-size: 6rem;
+    }
+}
+
+/* =============== GLOBALS =============== */
+
+* {
+    font-size: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a, a:visited, a:hover{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+body {
+    width: 100%;
+
+    display: block;
+    font-size: var(--body-font-size);
+    font-family: 'Montserrat', sans-serif;;
+    background-color: var(--background-color);
+    color: var(--text-color);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: var(--gigantic-font-size);
+    font-weight: 200;
+}
+
+/* =============== TITLE =============== */
+#title-container {
+    border: blue solid;
+    width: 100%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+
+}
+
+#title-container h1 {
+    border: red solid;
+}
+
+#title-container img {
+    border: orange solid;
+}
+
+#title-text {
+    font-size: var(--gigantic-font-size);
+    align-self: center;
+}
+
+#title-image {
+    max-height: 50rem;
+    width: auto;
+}
