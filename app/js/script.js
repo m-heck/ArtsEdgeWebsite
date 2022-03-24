@@ -21,6 +21,19 @@ if(navClose) {
     })
 }
 
+/* ============= HIDE MENU ON LINK-CLICK ============= */
+const links = document.querySelectorAll('.menu-icon');
+
+links.forEach(n => console.log(n));
+
+function hideMenu() {
+    const navMenu = document.getElementById('navigation');
+    navMenu.classList.remove('show-menu');
+    navOpen.classList.remove('hide-toggle');
+}
+
+links.forEach(n => n.addEventListener('click', hideMenu));
+
 /* ============= TRANSITIONS ============= */
 /* Fade in */
 
