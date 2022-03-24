@@ -126,7 +126,7 @@ p {
     height: auto;
     text-align: justify;
 
-    margin-top: 120rem;
+    margin-top: 100rem;
 
     display: flex;
     flex-direction: column;
@@ -228,6 +228,7 @@ p {
 /* =============== TITLE =============== */
 #title-container {
     width: 100%;
+    max-width: 1300px;
     max-height: 55rem;
     height: 98vw;
     padding-left: var(--general-padding);
@@ -255,7 +256,7 @@ p {
     width: auto;
     max-width: 50vw;
     object-fit: cover;
-    right: 0;
+    right: 5%;
     margin-right: 2rem;
 }
 
@@ -326,5 +327,11 @@ p {
 @media screen and (min-width: 1025px) {
     #title-text {
         margin-left: 6rem;
+    }
+} 
+
+/* laptop size */
+@media screen and (min-width: 1500px) {
+    #title-image {
     }
 } 
