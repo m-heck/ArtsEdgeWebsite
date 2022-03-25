@@ -36,7 +36,6 @@ links.forEach(n => n.addEventListener('click', hideMenu));
 
 /* ============= TRANSITIONS ============= */
 /* Fade in */
-
 const faders = document.querySelectorAll('.fade-in');
 
 const appearOptions = {
@@ -65,6 +64,23 @@ sliders.forEach(slider => {
 })
 
 /* ============= PARALLAX ============= */
+/* image breaks */
+let breakTexts = document.querySelectorAll('.image-break-text');
+
+window.addEventListener('scroll', function() {
+    breakTexts.forEach(text => {
+        if (text.classList.contains('reverse-text')) {
+            let offset = text.getBoundingClientRect().top + 1000;
+            text.style.left = offset * .25 + 'px';
+        } else {
+            let offset = text.getBoundingClientRect().top - 2000;
+            text.style.right = offset * .25 + 'px';
+        }
+
+    });
+});
+
+/* title text */
 if (true) {
     console.log('large screen');
     let title_text = document.getElementById('title-text');
@@ -74,4 +90,4 @@ if (true) {
 
       title_text.style.left = value * .25 + 'px';
     })
-  }
+  };
