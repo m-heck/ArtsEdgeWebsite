@@ -10,7 +10,8 @@ if (navOpen) {
     navOpen.addEventListener('click', () => {
         navMenu.classList.add('show-menu');
         navOpen.classList.add('hide-toggle');
-    });
+      }
+    )
 };
 
 /* hides menu */
@@ -20,6 +21,7 @@ if(navClose) {
         navOpen.classList.remove('hide-toggle');
     })
 }
+
 
 /* ============= HIDE MENU ON LINK-CLICK ============= */
 const links = document.querySelectorAll('.menu-icon');
@@ -33,6 +35,11 @@ function hideMenu() {
 }
 
 links.forEach(n => n.addEventListener('click', hideMenu));
+
+/* ============= STOPS TRANSITIONS WHEN MENU IS CLICKED ============= */
+links.forEach(n => {
+  n.style.transition = "opacity 1ms ease-in";
+})
 
 /* ============= TRANSITIONS ============= */
 /* Fade in */
@@ -73,7 +80,7 @@ window.addEventListener('scroll', function() {
             let offset = text.getBoundingClientRect().top + 1000;
             text.style.left = offset * .25 + 'px';
         } else {
-            let offset = text.getBoundingClientRect().top - 2000;
+            let offset = text.getBoundingClientRect().top - 2500;
             text.style.right = offset * .25 + 'px';
         }
 

@@ -208,6 +208,24 @@ p {
     right: 10%;
 }
 
+/* adjusts positions for smaller screen*/
+
+@media screen and (max-width: 768px) {
+    .image-break-text {
+        position: relative;
+        white-space: nowrap;
+        font-size: var(--h1-font-size);
+        align-self: center;
+        color: var(--text-color-light);
+        z-index: 2;
+        margin-left: -30rem;
+    }
+    
+    .reverse-text {
+        margin-left: -17rem;
+    }
+}
+
 #title-break {
     font-size: var(--h2-font-size);
 }
@@ -220,7 +238,7 @@ p {
     padding: 1rem;
     transition: 0.3s;
     padding: 0.75rem;
-    z-index: 1;
+    z-index: 3;
 
     display: flex;
     justify-content: space-between;
@@ -278,6 +296,7 @@ p {
         padding: 1.5rem 1rem 1rem;
         text-align: center;
         background-color: var(--background-color-lighter);
+        z-index: 3;
 
         display: flex;
         flex-direction: column;
