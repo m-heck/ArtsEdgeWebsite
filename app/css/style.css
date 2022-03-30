@@ -173,11 +173,14 @@ p {
     display: block;
     background-color: var(--background-color);
     color: var(--text-color);
-    padding: 7px;
-    border: solid var(--text-color-light) 2px;
     cursor: pointer;
     opacity: .7;
     width: auto;
+}
+
+.button a {
+    padding: 7px;
+    border: solid var(--text-color-light) 2px;
 }
 
 /* =============== IMAGE BREAK =============== */
