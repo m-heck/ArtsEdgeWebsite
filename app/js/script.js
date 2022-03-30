@@ -38,7 +38,9 @@ links.forEach(n => n.addEventListener('click', hideMenu));
 
 /* ============= STOPS TRANSITIONS WHEN MENU IS CLICKED ============= */
 links.forEach(n => {
-  n.style.transition = "opacity 1ms ease-in";
+  navOpen.addEventListener('click', () => {
+    n.style.transition = "opacity 1ms ease-in";
+  })
 })
 
 /* ============= TRANSITIONS ============= */
@@ -89,7 +91,6 @@ window.addEventListener('scroll', function() {
 
 /* title text */
 if (true) {
-    console.log('large screen');
     let title_text = document.getElementById('title-text');
 
     window.addEventListener('scroll', function() {

@@ -283,7 +283,19 @@
                 let breakImages = document.querySelectorAll('.image-break');
                 breakImages.forEach(image => {
                     let elementID = image.id;
-                    let opacityValue = ((1 - image.getBoundingClientRect().top) / 1200) + .35;
+                    // ((1 - image.getBoundingClientRect().top) / 1200) + .35;
+                    let opacityValue;
+
+                    // changes the constant for smaller screens
+                    const mediaQuery = window.matchMedia('(max-width: 768px)');
+                    if (mediaQuery.matches) {
+                        // For mobile
+                        opacityValue = ((1 - image.getBoundingClientRect().top) / 1200) + .75;
+                    } else {
+                        // For non-mobile
+                        opacityValue = ((1 - image.getBoundingClientRect().top) / 1200) + .35;
+                    }
+
                     if (opacityValue > 0.6) {
                         opacityValue = 1.2 - opacityValue;
                     }
