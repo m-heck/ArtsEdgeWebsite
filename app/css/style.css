@@ -92,7 +92,6 @@ img {
 body {
     width: 100%;
     overflow-x: hidden;
-    margin-bottom: 100vh;
 
     display: block;
     font-size: var(--normal-font-size);
@@ -452,6 +451,22 @@ p {
 
 .fade-very-slowly {
     transition: opacity 4s ease-in;
+}
+
+/* =============== FOOTER =============== */
+#footer-container {
+    margin-top: 50rem;
+    margin-bottom: 15rem;
+    height: 60rem;
+}
+
+#footer-links {
+    margin-top: 20rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 /* ========== MEDIA QUERIES ========== */
