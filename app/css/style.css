@@ -29,7 +29,6 @@
 
     /* misc */
     --general-padding: 5rem;
-    --general-gap: 2rem;
     --title-margin: 1rem;
 
 }
@@ -55,7 +54,6 @@
 
         /* misc */
         --general-padding: 6rem;
-        --general-gap: 4rem;
         --title-margin: 2rem;
     }
 }
@@ -148,8 +146,16 @@ p {
 
     display: flex;
     flex-direction: column;
-    gap: 2rem;
     line-height: 2rem;
+}
+
+.body-container p {
+    margin-top: 2rem;
+}
+
+.body-container h3{
+    margin-top: 3rem;
+    margin-bottom: 1rem;
 }
 
 .body-self-links {
@@ -316,8 +322,11 @@ p {
 
         display: flex;
         flex-direction: column;
-        gap: 10px;
     }
+}
+
+.navigation-container a {
+    margin-right: 3%;
 }
 
 /* ========== JAVASCRIPT HEADER HELPERS ========== */
@@ -379,31 +388,34 @@ p {
 /* ========== ABOUT ========== */
 #about-container {
     text-align: center;
-    gap: var(--general-gap);
+}
+
+#about-container p {
+    margin-top: 0;
 }
 
 /* ========== TUITION ========== */
 #tuition-container {
     text-align: center;
-    gap: var(--general-gap);
+}
+
+#tuition-container p {
+    margin-top: 0;
 }
 
 #fees {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
 }
 
 /* ========== CLASSES ========== */
 #classes-container {
     text-align: center;
-    gap: var(--general-gap);
 }
 
 /* ========== STAFF ========== */
 #staff-container {
     text-align: left;
-    gap: 5rem;
 }
 
 .staff-element {
@@ -415,7 +427,7 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: var(--general-gap);
+    margin: 3rem;
 }
 
 .title-text-container {
@@ -431,6 +443,7 @@ p {
     width: auto;
     height: auto;
     max-width: 180px;
+    margin-right: 2rem;
 }
 
 /* ========== TRANSITIONS ========== */
@@ -483,7 +496,10 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+}
+
+#footer-links i {
+    margin: 2rem;
 }
 
 /* ========== MEDIA QUERIES ========== */
